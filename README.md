@@ -37,17 +37,38 @@ FDS-FL-2025
 2.  Prepare the datasets.
     * Place your raw data file (e.g., `raw.csv`) inside a directory named `dataset/` at the project root.
     * Run the preprocessing and splitting scripts in order. The scripts will use the default paths:
-        1.  `python centralized/preprocess_data.py`
-        2.  `python centralized/split_data.py`
-        3.  `python federated/data_split/split_data_into_silos.py`
-    * This will generate all necessary `train_data.csv` and `test_data.csv` files in `dataset/centralized_split` and `dataset/federated_split`.
+        
+        **(1) Preprocessing & Centralized Split:**
+        ```bash
+        cd centralized
+        python preprocess_data.py
+        python split_data.py
+        cd .. 
+        ```
 
-3.  For the **Centralized (Traditional ML)** experiment, run the `source.py` script:
-    * `python centralized/source.py`
-    * This script will automatically load the centralized data and run models like Random Forest, XGBoost, etc.
+        **(2) Federated Split:**
+        ```bash
+        cd federated/data_split
+        python split_data_into_silos.py
+        cd ../..
+        ```
+    * This will generate all necessary files in `dataset/centralized_split` and `dataset/federated_split`.
 
-4.  For the **Federated Learning (FL)** experiment, run the `main.py` script:
-    * `python main.py {desired experiment settings}`
+3.  For the **Centralized (Traditional ML)** experiment:
+    * (Run from inside the `centralized` folder)
+    
+        ```bash
+        cd centralized
+        python source.py
+        cd ..
+        ```
+
+4.  For the **Federated Learning (FL)** experiment:
+    * (This one is run from the root directory)
+    
+        ```bash
+        python main.py {desired experiment settings}
+        ```
     * All arguments are set in `main.py`. You can run with defaults:
         * `python main.py`
     * Or override settings like:
