@@ -2,31 +2,31 @@
 
 ```text
 FDS-FL-2025
-├── centralized             # Scripts for Centralized setting
-|   ├── preprocess_data.py  # (1) Preprocess raw data
-|   └── split_data.py       # (2) Split preprocessed data into train/test
+├── centralized                      # Scripts for Centralized setting
+|   ├── preprocess_data.py           # Preprocess raw data
+|   └── split_data.py                # Split preprocessed data into train/test
 |
-├── federated               # All logic for Federated Learning
-|   ├── data_split          #   Script for splitting data for FL
-|   |   └── split_data_into_silos.py
+├── federated                        # All logic for Federated Learning
+|   ├── data_split                   # Script for splitting data for FL
+|   |   └── split_data_into_silos.py # Partitions the entire dataset into N client 'silos'
 |   |
-|   ├── model               #   Model architecture definitions
-|   |   ├── mlp.py          # (e.g., MLP model)
-|   |   └── model_utils.py  # (Model builder utility)
+|   ├── model                        # Model architecture definitions
+|   |   ├── mlp.py                   # The MLP model structure used in experiments
+|   |   └── model_utils.py           # Model builder helper
 |   |
-|   ├── training            #   Main FL training logic
-|   |   ├── client          #   (1) Client-side logic
-|   |   |   ├── Base_Client.py
-|   |   |   └── FedAvg_Client.py
+|   ├── training                     # Main FL training logic
+|   |   ├── client                   # Defines individual client behavior
+|   |   |   ├── Base_Client.py       # Abstract client class
+|   |   |   └── FedAvg_Client.py     # Implements FedAvg local training and testing logic
 |   |   |
-|   |   └── server          #   (2) Server-side logic
-|   |       ├── Base_Server.py
-|   |       └── FedAvg_Server.py
+|   |   └── server                   # Defines central server behavior
+|   |       ├── Base_Server.py       # Abstract server class
+|   |       └── FedAvg_Server.py     # Implements FedAvg model aggregation and the main loop
 |   |
-|   └── utils.py            #   Other utilities (e.g., set_seed)
+|   └── utils.py                     # Other utilities (e.g., set_seed)
 |
-├── main.py                 # (MAIN) Main script to run FL experiments
-└── vpfl.yml                # Conda environment configuration file
+├── main.py                          # (MAIN) Main script to run FL experiments
+└── vpfl.yml                         # Conda environment configuration file
 ```
 ## How to Run?
 
