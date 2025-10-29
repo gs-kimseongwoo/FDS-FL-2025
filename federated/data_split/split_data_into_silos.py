@@ -17,7 +17,7 @@ def parse_arguments():
                         help='Path to the preprocessed CSV file')
     parser.add_argument('--save_dir', default='../../dataset/federated_split',
                         help='Base directory to save the federated split data')
-    parser.add_argument('--num_silos', type=int, default=3,
+    parser.add_argument('--num_silos', type=int, default=4,
                         help='The number of silos to partition the data into')
     parser.add_argument('--test_split_ratio', type=float, default=0.3,
                         help='Test split ratio for the data within each silo')
