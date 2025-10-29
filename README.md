@@ -4,6 +4,7 @@
 FDS-FL-2025
 ├── centralized                      # Scripts for Centralized setting
 |   ├── preprocess_data.py           # Preprocess raw data
+|   ├── source.py                    # Trains and evaluates ML models (RF, XGBoost, etc.)
 |   └── split_data.py                # Split preprocessed data into train/test
 |
 ├── federated                        # All logic for Federated Learning
