@@ -75,3 +75,8 @@ FDS-FL-2025
     * Or override settings like:
         * `python main.py --global_rounds 20 --num_silos 5 --lr 0.01`
     * Refer to `main.py` for the full list of available arguments.
+  
+
+## Acknowledgement
+
+This work was supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government (MSIT) (No. RS2025-02263169, Detection and Prediction of Emerging and Undiscovered Voice Phishing)
